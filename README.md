@@ -84,68 +84,61 @@ await generator.generate(['ios']);
 
 ```
 app-icons/
-├── ios/
-│   ├── Icon-20@2x.png       (40x40)
-│   ├── Icon-20@3x.png       (60x60)
-│   ├── Icon-29@2x.png       (58x58)
-│   ├── Icon-29@3x.png       (87x87)
-│   ├── Icon-40@2x.png       (80x80)
-│   ├── Icon-40@3x.png       (120x120)
-│   ├── Icon-60@2x.png       (120x120)
-│   ├── Icon-60@3x.png       (180x180)
-│   ├── Icon-76@1x.png       (76x76)
-│   ├── Icon-76@2x.png       (152x152)
-│   ├── Icon-83.5@2x.png     (167x167)
-│   ├── Icon-1024@1x.png     (1024x1024)
-│   └── Contents.json
-└── android/
-    ├── mipmap-ldpi/
-    │   ├── ic_launcher.png
-    │   └── ic_launcher_round.png
-    ├── mipmap-mdpi/
-    │   ├── ic_launcher.png
-    │   └── ic_launcher_round.png
-    ├── mipmap-hdpi/
-    │   ├── ic_launcher.png
-    │   └── ic_launcher_round.png
-    ├── mipmap-xhdpi/
-    │   ├── ic_launcher.png
-    │   └── ic_launcher_round.png
-    ├── mipmap-xxhdpi/
-    │   ├── ic_launcher.png
-    │   └── ic_launcher_round.png
-    └── mipmap-xxxhdpi/
-        ├── ic_launcher.png
-        └── ic_launcher_round.png
+├── Assets.xcassets/
+│   └── AppIcon.appiconset/
+│       ├── 16.png, 20.png, 29.png, 32.png, 40.png
+│       ├── 48.png, 50.png, 55.png, 57.png, 58.png
+│       ├── 60.png, 64.png, 66.png, 72.png, 76.png
+│       ├── 80.png, 87.png, 88.png, 92.png, 100.png
+│       ├── 102.png, 108.png, 114.png, 120.png, 128.png
+│       ├── 144.png, 152.png, 167.png, 172.png, 180.png
+│       ├── 196.png, 216.png, 234.png, 256.png, 258.png
+│       ├── 512.png, 1024.png
+│       └── Contents.json
+├── android/
+│   ├── mipmap-mdpi/test.png       (48x48)
+│   ├── mipmap-hdpi/test.png       (72x72)
+│   ├── mipmap-xhdpi/test.png      (96x96)
+│   ├── mipmap-xxhdpi/test.png     (144x144)
+│   └── mipmap-xxxhdpi/test.png    (192x192)
+├── appstore.png                    (1024x1024)
+└── playstore.png                   (512x512)
 ```
 
 ## iOS Icons Generated
 
-| Size | Scales | Purpose |
-|------|--------|---------|
-| 20x20 | 2x, 3x | iPhone Notification |
-| 29x29 | 2x, 3x | iPhone Settings |
-| 40x40 | 2x, 3x | iPhone Spotlight |
-| 60x60 | 2x, 3x | iPhone App |
-| 20x20 | 1x, 2x | iPad Notification |
-| 29x29 | 1x, 2x | iPad Settings |
-| 40x40 | 1x, 2x | iPad Spotlight |
-| 76x76 | 1x, 2x | iPad App |
-| 83.5x83.5 | 2x | iPad Pro App |
-| 1024x1024 | 1x | App Store |
+**Total: 37 icons** covering iPhone, iPad, Apple Watch, macOS, and App Store
+
+| Platform | Sizes Generated | Count |
+|----------|-----------------|-------|
+| **iPhone** | 20, 29, 40, 57, 58, 60, 80, 87, 114, 120, 180 | 11 icons |
+| **iPad** | 20, 29, 40, 50, 72, 76, 100, 144, 152, 167 | 10 icons |
+| **Apple Watch** | 48, 55, 66, 80, 88, 92, 100, 102, 108, 172, 196, 216, 234, 258 | 14 icons |
+| **macOS** | 16, 32, 64, 128, 256, 512 | 6 icons |
+| **App Store** | 1024 | 1 icon |
+
+All icons are named by their pixel size (e.g., `20.png`, `180.png`, `1024.png`) and include a proper `Contents.json` for Xcode integration.
 
 ## Android Icons Generated
 
-| Density | Scale | Size | Purpose |
-|---------|-------|------|---------|
-| ldpi | 0.75x | 36x36 | Low density |
-| mdpi | 1x | 48x48 | Medium density (baseline) |
-| hdpi | 1.5x | 72x72 | High density |
-| xhdpi | 2x | 96x96 | Extra high density |
-| xxhdpi | 3x | 144x144 | Extra extra high density |
-| xxxhdpi | 4x | 192x192 | Extra extra extra high density |
+**Total: 5 icons** (one per density)
 
-Both standard and round variants are generated for each density.
+| Density | Size | Filename | Purpose |
+|---------|------|----------|---------|
+| mdpi | 48x48 | test.png | Medium density (baseline) |
+| hdpi | 72x72 | test.png | High density |
+| xhdpi | 96x96 | test.png | Extra high density |
+| xxhdpi | 144x144 | test.png | Extra extra high density |
+| xxxhdpi | 192x192 | test.png | Extra extra extra high density |
+
+All Android icons are named `test.png` and organized in their respective `mipmap-*` folders.
+
+## Store Icons
+
+In addition to platform-specific icons, two store-ready icons are generated in the root:
+
+- **appstore.png** - 1024x1024px for iOS App Store
+- **playstore.png** - 512x512px for Google Play Store
 
 ## Integration into Your Product
 
