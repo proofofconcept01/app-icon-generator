@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Icon Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>App Icon Generator</h1>
+            <p class="subtitle">Generate iOS and Android icons from a single image</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div id="dropzone" class="dropzone">
+                    <div class="dropzone-content">
+                        <svg class="upload-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                        </svg>
+                        <h2>Drop your icon here</h2>
+                        <p>or click to browse</p>
+                        <p class="hint">PNG or JPG • Recommended: 1024x1024px or larger</p>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/png,image/jpeg,image/jpg" hidden>
+                </div>
+
+                <div id="preview" class="preview hidden">
+                    <img id="previewImage" alt="Preview">
+                    <div class="preview-info">
+                        <p id="fileName"></p>
+                        <p id="fileSize"></p>
+                        <p id="fileDimensions"></p>
+                    </div>
+                    <button id="removeBtn" class="btn-secondary">Remove</button>
+                </div>
+            </div>
+
+            <div class="options-section">
+                <h3>Platform Selection</h3>
+                <div class="platform-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="iosCheck" checked>
+                        <span>iOS (iPhone & iPad)</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="androidCheck" checked>
+                        <span>Android</span>
+                    </label>
+                </div>
+            </div>
+
+            <button id="generateBtn" class="btn-primary" disabled>
+                Generate Icons
+            </button>
+
+            <div id="status" class="status hidden">
+                <div class="spinner"></div>
+                <p id="statusText">Generating icons...</p>
+            </div>
+
+            <div id="result" class="result hidden">
+                <div class="success-icon">✓</div>
+                <h3>Icons Generated Successfully!</h3>
+                <p id="resultText"></p>
+                <button id="downloadBtn" class="btn-primary">Download Icons</button>
+                <button id="resetBtn" class="btn-secondary">Generate Another</button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>iOS Icons</h4>
+                    <p>18 sizes for iPhone, iPad, and App Store</p>
+                </div>
+                <div class="info-card">
+                    <h4>Android Icons</h4>
+                    <p>6 densities with regular and round variants</p>
+                </div>
+                <div class="info-card">
+                    <h4>100% Local</h4>
+                    <p>All processing happens on the server, no external uploads</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

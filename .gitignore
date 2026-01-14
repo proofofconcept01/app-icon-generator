@@ -1,0 +1,8 @@
+node_modules/
+app-icons/
+*.log
+.DS_Store
+*.png
+*.jpg
+*.jpeg
+!example.png
